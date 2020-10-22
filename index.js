@@ -31,6 +31,26 @@ function checktrue (x){
     }
     return false;
 };
-function reduceToAllTrue(t){
-    return t.reduce(checktrue);
-};
+function reduceToAllTrue(sourceArray){
+    let result = false;
+    for (let x of sourceArray){
+        if(x){
+            result = true;
+        } else {
+            return false
+        }
+    }
+    return result
+}
+
+function reduceToAnyTrue(sourceArray){
+    let result = true;
+    for (let x of sourceArray){
+        if(!x){
+            result = false
+        } else{
+            return true;
+        }
+    }
+    return result
+}
